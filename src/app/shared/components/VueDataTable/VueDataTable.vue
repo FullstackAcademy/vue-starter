@@ -18,7 +18,7 @@
             v-if="cell.visible"
             :key="idx"
             :class="$style.column"
-            :style="{flexBasis: `${columnWidth}`}">
+            :style="{width: `${columnWidth}`}">
 
           <slot :name="cell.slot" :cell="cell">{{ cell.value }}</slot>
 
@@ -216,7 +216,7 @@
   }
 
   .noResults {
-    border:     1px solid $divider-color;
+    border:     1px solid $border-color;
     border-top: none;
     text-align: center;
     opacity:    .5;
@@ -224,13 +224,11 @@
   }
 
   .vueDataTableRow {
-    display:        flex;
-    flex-direction: row;
-    box-shadow:     $panel-shadow;
-    border:         1px solid $divider-color;
-    border-top:     none;
-    cursor:         pointer;
-    min-width:      600px;
+    box-shadow: $panel-shadow;
+    border:     1px solid $border-color;
+    border-top: none;
+    cursor:     pointer;
+    min-width:  600px;
 
     &:hover {
       background: $panel-bg;
@@ -238,9 +236,9 @@
   }
 
   .column {
-    flex:         1 1 auto;
-    border-right: 1px solid $divider-color;
+    border-right: 1px solid $border-color;
     padding:      $space-unit $space-unit * 2;
+    min-width:    150px;
 
     &:last-child {
       border-right: none;
