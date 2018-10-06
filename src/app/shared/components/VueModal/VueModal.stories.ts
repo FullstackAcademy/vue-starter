@@ -18,8 +18,25 @@ story.add('Default', () => ({
   template:   `
 <vue-panel>
   <vue-button @click="show = true" secondary>Show</vue-button>
-  <vue-modal :show="show">
-    <vue-button @click="show = false">Hide</vue-button>
+  <vue-modal :show="show" @close="show = false">
+    <vue-button primary ghost @click="show = false">Hide</vue-button>
+  </vue-modal>
+</vue-panel>
+  `,
+}));
+
+story.add('Fit Content', () => ({
+  components: { VueModal, VueButton, VuePanel },
+  data() {
+    return {
+      show: false,
+    };
+  },
+  template:   `
+<vue-panel>
+  <vue-button @click="show = true" secondary>Show</vue-button>
+  <vue-modal :show="show" @close="show = false" fit-content>
+    <vue-button primary ghost @click="show = false">Hide</vue-button>
   </vue-modal>
 </vue-panel>
   `,

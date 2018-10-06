@@ -1,110 +1,96 @@
-# Apply your brand colors
+# Design System
 
-Of course, you want to have a different theme than the default one.
+The vue-starter comes with a Design System that you can 100% customize.
 
-In order to apply your brand colors, open up `./src/app/shared/styles/_variables.scss`:
-and have a look at these lines:
+# Brand
 
-```css
-/* Brand */
-$brand-dark-primary: #7966F3;
-$brand-light-primary: #9B9BFD;
-$brand-primary: #A851E2;
-$brand-accent: #17BEBB;
-$brand-warn: #FB3640;
+## Color Palette
 
-/* Background Colors */
-$bg-color: #333;
-$bg-color-inverse: #FFF;
+<img :src="$withBase('/color-palette.jpg')" alt="architecture"> 
 
-/* Text Colors */
-$text-color: #FFF;
-$text-color-inverse: #333;
-$secondary-text-color: #BABABA;
+The naming convention of the color palette is structured in the following way
 
-/* Border Colors */
-$divider-color: lighten($bg-color, 20%);
+`Meaning`-`Weight`-`Shade`
 
-/* Animation Language */
-$transition-duration: 250ms;
+following _Meanings_ are included:
 
-/* Font Sizes */
-$font-size: 1.6rem;
-$font-size-h1: 4.6rem;
-$font-size-h2: 3.6rem;
-$font-size-h3: 2.8rem;
-$font-size-h4: 2.2rem;
-$font-size-h5: 1.8rem;
-$font-size-h6: 1.6rem;
+- **primary** (Main Colors)
+- **secondary** (Accent Colors)
+- **tertiary** (Utility Colors)
 
-/* Font Size Factors */
-$font-size-factor-tablet-landscape: 1.125;
-$font-size-factor-large-desktop: 1.25;
+the following _Weights_ are included:
 
-/* Font Weights */
-$font-weight: 300;
-$font-weight-h1: 400;
-$font-weight-h2: 400;
-$font-weight-h3: 400;
-$font-weight-h4: 400;
-$font-weight-h5: 400;
-$font-weight-h6: 700;
+- primary **1-2**
+- secondary **1-5**
+- tertiary **1-5**
 
-/* Line Heights */
-$line-height: 1.6;
-$line-height-h1: 1.2;
-$line-height-h2: 1.25;
-$line-height-h3: 1.3;
-$line-height-h4: 1.35;
-$line-height-h5: 1.5;
-$line-height-h6: 1.4;
+and the following shades are included:
 
-/* Letter Spacings */
-$letter-spacing: .01em;
-$letter-spacing-h1: -.1rem;
-$letter-spacing-h2: -.1rem;
-$letter-spacing-h3: -.1rem;
-$letter-spacing-h4: -.08rem;
-$letter-spacing-h5: -.05rem;
-$letter-spacing-h6: -.1rem;
+Shade | Opacity
+------|--------
+1     | 100 %
+2     | 80 %
+3     | 60 %
+4     | 40 %
+5     | 20 %
+6     | 10 %
+7     | 5 %
 
-/* General */
-$google-font: 'https://fonts.googleapis.com/css?family=Oxygen:300,400,700|Lato:300,400,700';
-$font-family-headings: 'Oxygen', Helvetica, sans-serif;
-$font-family: 'Lato', Helvetica, sans-serif;
-$space-unit: 0.8rem;
+## Brand Colors
+Every brand color is related to a color of the color palette.
 
-/* Animations */
-$fade-animation-transition: opacity $transition-duration * 4 ease-in-out;
+### Brand Variations
+These are the colors that we use to create different variations of components.
 
-/* Grid */
-$screen-phone: 320px;
-$screen-phone-max: $screen-phone - 1;
-$screen-tablet-portrait: 768px;
-$screen-tablet-portrait-max: $screen-tablet-portrait - 1;
-$screen-tablet-landscape: 1024px;
-$screen-tablet-landscape-max: $screen-tablet-landscape - 1;
-$screen-small-desktop: 1200px;
-$screen-small-desktop-max: $screen-small-desktop - 1;
-$screen-large-desktop: 1440px;
-$screen-large-desktop-max: $screen-large-desktop - 1;
-$screen-phone-gutter: 16px;
-$screen-tablet-portrait-gutter: $space-unit * 2;
-$screen-tablet-landscape-gutter: $space-unit * 2;
-$screen-small-desktop-gutter: $space-unit * 4;
-$screen-large-desktop-gutter: $space-unit * 4;
+Variation        | Palette Color
+-----------------|--------------
+brand-primary   | primary-2-1
+brand-secondary | secondary-1-1
+brand-tertiary  | primary-1-5
+brand-danger    | tertiary-1-1
+brand-warn      | tertiary-2-1
+brand-success   | tertiary-3-1
 
-```
+### Background Colors
+These are the colors that we use for document backgrounds or sections on a page.
 
-All the components are dependents of these variables, so everything will look different if you change these values.
+Variation                | Palette Color
+-------------------------|--------------
+bg-color                 | tertiary-4
+bg-color-variant         | primary-1-6
+bg-color-inverse         | tertiary-5
+bg-color-variant-inverse | primary-1-3
 
-::: tip Do you have light brand colors?
-Make sure you replace the `lighten` SCSS function with the `darken` function.
+### Text Colors
+These are the colors that we use for document backgrounds or sections on a page.
 
-_**This should look much better**_ :smile:
-:::
+Variation                    | Palette Color
+-----------------------------|--------------
+text-color                   | tertiary-5
+text-secondary-color         | primary-1-3
+text-color-inverse           | tertiary-4
+text-secondary-color-inverse | primary-1-6
+link-color                   | secondary-1-1
+link-hover-color             | darken($link-color, 5%)
 
-::: tip It's all yours!
-Remember that every component provided by the vue-starter is **YOUR** code,
-you can change the behavior, appearance and features exactly as you need it for your project.
-:::
+### Border Colors
+These are the colors that we use for document backgrounds or sections on a page.
+
+Variation            | Palette Color
+---------------------|--------------
+border-color         | primary-1-5
+border-color-inverse | primary-1-2
+
+## General Branding
+
+### Spacing, Border Radius and Transitions
+
+## Typography
+
+### Headings
+
+### Text Styles
+
+## Layout
+
+### Break points
